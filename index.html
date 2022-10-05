@@ -4,22 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Form Validation</title>
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <h1>Form Validation Exercise</h1>
     <form>
       <p>
-        <label for="user-email">
-          <span>Enter your Email Address:</span>
-          <input type="email" id="user-email" name="user-email" />
-        </label>
+        <label for="user-email">Email Address:</label>
+        <input type="email" id="user-email" name="user-email" required />
+        <span class="error"></span>
       </p>
       <p>
-        <label for="country">
-          <span>Country:</span>
-        </label>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" />
+        <span class="error"></span>
       </p>
+      <p>
+        <label for="zipcode">Zipcode:</label>
+        <input
+          type="text"
+          name="zipcode"
+          id="zipcode"
+          pattern="[0-9]+"
+          maxlength="5"
+        />
+        <span class="error"></span>
+      </p>
+      <p>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          minlength="8"
+        />
+        <span class="error"></span>
+      </p>
+      <p>
+        <label for="password-confirm">Confirm Password:</label>
+        <input
+          type="password"
+          name="password-confirm"
+          id="password-confirm"
+          required
+        />
+        <span class="error"></span>
+      </p>
+      <button type="button">Submit</button>
     </form>
     <script src="./app.js"></script>
   </body>
